@@ -36,6 +36,38 @@ but1.addEventListener("click", (e) => {
   result.innerText = `the sum of the two numbers is \n \n ${sum}`;
   result.className = "result";
 });
+but2.addEventListener("click", (e) => {
+  e.preventDefault();
+  let sub = parseFloat(num1.value) - parseFloat(num2.value);
+  console.log(sub);
+  let result = document.getElementById("result");
+  result.innerText = the difference of the two numbers is \n \n ${sub};
+  result.className = "result";
+});
+but3.addEventListener("click", (e) => {
+  e.preventDefault();
+  let mul = parseFloat(num1.value) * parseFloat(num2.value);
+  console.log(mul);
+  let result = document.getElementById("result");
+  result.innerText = the product of the two numbers is \n \n ${mul};
+  result.className = "result";
+});
+but4.addEventListener("click", (e) => {
+  e.preventDefault();
+  let dev = parseFloat(num1.value) / parseFloat(num2.value);
+  console.log(dev);
+  let result = document.getElementById("result");
+  result.innerText = the factor of the two numbers is \n \n ${dev};
+  result.className = "result";
+});
+but5.addEventListener("click", (e) => {
+  e.preventDefault();
+  let rem = parseInt(num1.value) % parseInt(num2.value);
+  console.log(rem);
+  let result = document.getElementById("result");
+  result.innerText = the remainder  is \n \n ${rem};
+  result.className = "result";
+});
 but6.addEventListener("click", (e) => {
   e.preventDefault();
   let pow = parseFloat(num1.value) ** parseFloat(num2.value);
