@@ -29,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
     board.appendChild(card);
     cards.push(card);
   }
-
+// ANOTHER PART
  
