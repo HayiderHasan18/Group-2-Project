@@ -30,32 +30,47 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.push(card);
   }
 
- function onCardClick(event) {
-    if (firstCard && secondCard) return;
-    let clickedCard = event.currentTarget;
-    if (clickedCard === firstCard) return;
+  function resetGame() {
+    cardValues.sort(() => 0.5 - Math.random());
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove("flipped", "matched");
+      cards[i].querySelector(".card-back").textContent = cardValues[i];
+      cards[i].dataset.value = cardValues[i];
+    }
+    firstCard = null;
+    secondCard = null;
+    statusElement.textContent = "";
+  }
+  // Attach resetGame function to the restart button
+  document.querySelector("button").addEventListener("click", resetGame);
+});
 
-    clickedCard.classList.add("flipped");
+function onCardClick(event) {
+  if (firstCard && secondCard) return;
+  let clickedCard = event.currentTarget;
+  if (clickedCard === firstCard) return;
 
-    if (!firstCard) {
-      firstCard = clickedCard;
+  clickedCard.classList.add("flipped");
+
+  if (!firstCard) {
+    firstCard = clickedCard;
+  } else {
+    secondCard = clickedCard;
+    if (firstCard.dataset.value === secondCard.dataset.value) {
+      firstCard.classList.add("matched");
+      secondCard.classList.add("matched");
+      firstCard = null;
+      secondCard = null;
+      if (cards.every((card) => card.classList.contains("matched"))) {
+        statusElement.textContent = "Congratulations You win!";
+      }
     } else {
-      secondCard = clickedCard;
-      if (firstCard.dataset.value === secondCard.dataset.value) {
-        firstCard.classList.add("matched");
-        secondCard.classList.add("matched");
+      setTimeout(() => {
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
         firstCard = null;
         secondCard = null;
-        if (cards.every((card) => card.classList.contains("matched"))) {
-          statusElement.textContent = "Congratulations You win!";
-        }
-      } else {
-        setTimeout(() => {
-          firstCard.classList.remove("flipped");
-          secondCard.classList.remove("flipped");
-          firstCard = null;
-          secondCard = null;
-        }, 1000);
-      }
+      }, 1000);
     }
   }
+}
