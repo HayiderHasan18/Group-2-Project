@@ -124,8 +124,8 @@ date.addEventListener("click", () => {
   result.className = "result";
 });
 time.addEventListener("click", () => {
-  let date1 = new Date();
+  let time1 = new time();
   let result = document.getElementById("result");
-  result.innerText = `the time now is \n \n ${date1.toLocaleTimeString()}`;
+  result.innerText = `the time now is \n \n ${time1.toLocaleTimeString()}`;
   result.className = "result";
-});
+});12
