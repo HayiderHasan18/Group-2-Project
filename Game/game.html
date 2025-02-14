@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memory Card Match Game</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      #btn {
+        background-color: aqua;
+        border-radius: 3px;
+        padding: 3px;
+      }
+      #btn:hover {
+        background-color: red;
+        color: white;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .game-board {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 10px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .card {
+        width: 100px;
+        height: 100px;
+        background-color: #ffcc00;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+      }
+      .card.flipped {
+        transform: rotateY(180deg);
+      }
+      .card-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card-front {
+        background-color: #ffcc00;
+      }
+      .card-back {
+        background-color: #00ccff;
+        transform: rotateY(180deg);
+      }
+      .matched .card-front {
+        background-color: #00ccff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Memory Card Match Game</h1>
+    <div class="game-board"></div>
+    <p id="status"></p>
+    <button id="btn" onclick="resetGame()">Restart Game</button>
+    <script src="./gameja.js"></script>
+  </body>
+</html>

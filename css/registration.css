@@ -1,28 +1,28 @@
 header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* Pushes the button to the right */
-  padding: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Pushes the button to the right */
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .home-btn {
-  padding: 10px 20px;
-  background: white;
-  color: #6e8efb;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+    padding: 10px 20px;
+    background: white;
+    color: #6e8efb;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .home-btn:hover {
-  background: #a777e3;
-  color: white;
-  transform: scale(1.05);
+    background: #a777e3;
+    color: white;
+    transform: scale(1.05);
 }
 
 * {
@@ -122,8 +122,8 @@ header {
   color: #333;
   font-weight: 600;
 }
-.wrapper .btn:hover {
-  background: #333;
+.wrapper .btn:hover{
+	  background: #333;
   color: #fff;
 }
 

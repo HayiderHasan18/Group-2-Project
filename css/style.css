@@ -205,13 +205,20 @@ audio {
     width: 80%;
     margin: 0 auto;
      border-collapse: collapse; 
-    background-color:white;
+  
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .table th, .table td {
     padding: 15px;
     text-align: center;
     border: 2px solid #008080
+    
+}
+.table th {
+  background-color: green;
+}
+.table td {
+  background-color: tomato;
 }
 .product-1 {
   margin-top: 10px;
