@@ -17,13 +17,13 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  background: black; /* Keeping original color */
+  background: black; 
   z-index: 1000;
   padding: 10px 20px;
 }
 
 .header .logo {
-  display: flex;
+  display: flex;2
   align-items: center;
 }
 
