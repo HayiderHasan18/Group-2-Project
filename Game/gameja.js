@@ -29,5 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
     board.appendChild(card);
     cards.push(card);
   }
-// ANOTHER PART
- 
+  function resetGame() {
+    cardValues.sort(() => 0.5 - Math.random());
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove("flipped", "matched");
+      cards[i].querySelector(".card-back").textContent = cardValues[i];
+      cards[i].dataset.value = cardValues[i];
+    }
+    firstCard = null;
+    secondCard = null;
+    statusElement.textContent = "";
+  }
+  // Attach resetGame function to the restart button
+  document.querySelector("button").addEventListener("click", resetGame);
+});
