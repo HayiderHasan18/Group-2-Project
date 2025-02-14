@@ -2,42 +2,78 @@
 <html lang="en">
 
 <head>
-    
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><login-part></login-part></title>
-  <link rel="stylesheet" href="../css/login.css">
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
-    <header style="display: flex; justify-content: flex-end; padding: 15px; background: forestgreen;">
-    <a href="/index.html" style="text-decoration: none;">
-         <button class="home-btn">Home</button>
-             </a>
+    <header>
+        <a href="/index.html">
+            <button class="home-btn">Home</button>
+        </a>
     </header>
-    <main id="login">
-         <div class="cont">
-         <div class="container">
-                <h2>Login</h2>
-             <form>
+
+    <main>
+        <!-- Login Form -->
+        <div class="form-container" id="loginForm">
+            <h2>Login</h2>
+            <form>
                 <div class="form-group">
-                     <input type="email" id="email" placeholder=" " required>
-                     <label for="email">Email</label>
-                     </div>
-                 <div class="form-group">
-                    <input type="password" id="password" placeholder=" " required>
-                         <label for="password">Password</label>
-                     </div>
-                     <a href="#" class="forgot-link">Forgot Password?</a>
-                     <button type="submit" class="btn">Log In</button>
-                 <p> Don't have an account?</p>
-                <a href="/Html/register.html">
-                     <button type="button" class="buton">Register now</button>
-                     </a>
-                     </form>
-             </div>
-             </div>
+                    <input type="email" id="email"  placeholder="Email" required>
+                    <label for="email"></label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <label for="password"></label>
+                </div>
+                <button type="submit" class="btn">Log In</button>
+                <p> Don't have an account?</p>
+                <button type="button" class="btn" onclick="showRegisterForm()">Register now</button>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-container" id="registerForm" style="display: none;">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <label for="fullName"></label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <label for="registerEmail"></label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword"  placeholder="Password" required>
+                    <label for="registerPassword"></label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <label for="phone"></label>
+                </div>
+                
+                
+                <button type="submit" class="btn">Register</button>
+                <p> Already have an account?</p>
+                <button type="button" class="btn" onclick="showLoginForm()">Login now</button>
+            </form>
+        </div>
     </main>
+
+    <script>
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+    </script>
 </body>
+
 </html>
