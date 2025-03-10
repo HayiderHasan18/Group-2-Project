@@ -37,6 +37,16 @@ if (isset($_POST['login'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $email;
             echo "Login successful!";
+        } else {
+            echo "Invalid email or password!";
+        }
+    } else {
+        echo "User not found.";
+    }
+    exit;
+}
+}
+?>
 
     <!DOCTYPE html>
 <html lang="en">
