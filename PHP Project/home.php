@@ -52,3 +52,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     }
+    // Handle To-Do List Actions
+    if (isset($_POST['add_task'])) {
+        $task = mysqli_real_escape_string($connection, $_POST['task']);
+        $sql = "INSERT INTO tasks (user_id, task, status) VALUES ('$user_id', '$task', 'pending')";
+        mysqli_query($connection, $sql);
+        header("Location: home.php");
+        exit();
+    }
+    if (isset($_POST['mark_done'])) {
+        $task_id = $_POST['task_id'];
+        $sql = "UPDATE tasks SET status='done' WHERE id=$task_id";
+        mysqli_query($connection, $sql);
+        header("Location: home.php");
+        exit();
+    }
+    if (isset($_POST['delete_task'])) {
+        $task_id = $_POST['task_id'];
+        $sql = "DELETE FROM tasks WHERE id=$task_id";
+        mysqli_query($connection, $sql);
+        header("Location: home.php");
+        exit();
+    }
+}
