@@ -122,6 +122,12 @@ if (isset($_POST['login'])) {
         e.preventDefault();
         $("#status").html(""); // Clear previous messages
         var formData = $(this).serialize() + "&login=1";
+         $.ajax({
+            url: "index.php",
+            type: "POST",
+            data: formData,
+            success: function (response) {
+                console.log(response); // Debugging: Check the response in the browser console
     });
     </script>
 </body>
