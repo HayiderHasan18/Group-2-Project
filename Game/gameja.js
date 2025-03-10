@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.push(card);
   }
 
- function onCardClick(event) {
+  function onCardClick(event) {
     if (firstCard && secondCard) return;
     let clickedCard = event.currentTarget;
     if (clickedCard === firstCard) return;
@@ -59,3 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+  function resetGame() {
+    cardValues.sort(() => 0.5 - Math.random());
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove("flipped", "matched");
+      cards[i].querySelector(".card-back").textContent = cardValues[i];
+      cards[i].dataset.value = cardValues[i];
+    }
+    firstCard = null;
+    secondCard = null;
+    statusElement.textContent = "";
+  }
+  // Attach resetGame function to the restart button
+  document.querySelector("button").addEventListener("click", resetGame);
+});

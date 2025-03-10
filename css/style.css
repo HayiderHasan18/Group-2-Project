@@ -17,13 +17,13 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  background: black; /* Keeping original color */
+  background: black; 
   z-index: 1000;
   padding: 10px 20px;
 }
 
 .header .logo {
-  display: flex;
+  display: flex;2
   align-items: center;
 }
 
@@ -80,6 +80,7 @@ body {
 .banner img{
   width: 100%;
   height: 100%;
+  
 }
 /* about us styling*/
 .about-us {
@@ -109,7 +110,6 @@ body {
   font-size: 16px;
   color: #444;
 }
-
 .about-us .btn {
   background: #f04e30;
   color: white;
@@ -118,7 +118,6 @@ body {
   cursor: pointer;
   margin-top: 20px;
 }
-
 .about-us .right-content {
   width: 50%;
   display: flex;
@@ -126,7 +125,6 @@ body {
   align-items: center;
   padding: 20px;
 }
-
 .about-us .right-content img {
   width: 500px;
   height: 500px;
@@ -174,8 +172,6 @@ audio {
   margin-top: 20px;
 }
 /* product */ 
-
-
 .pro {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -202,7 +198,7 @@ audio {
   
 }
 .table{
-    width: 80%;
+    width: 81%;
     margin: 0 auto;
      border-collapse: collapse; 
   
@@ -258,7 +254,6 @@ audio {
   text-align: center;
   margin-left: 2px;
 }
-
 .product-image {
   width: 80%;
   height: 300px; 
@@ -275,12 +270,10 @@ audio {
   color: #4caf50;
   margin: 8px 0;
 }
-
 .product-description {
   font-size: 0.9rem; /* Reduced font size */
   margin-bottom: 8px;
 }
-
 .product-price {
   font-weight: bold;
   margin: 8px 0;

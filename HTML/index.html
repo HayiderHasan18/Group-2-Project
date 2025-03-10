@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html">
+            <button class="home-btn">Home</button>
+        </a>
+    </header>
+
+    <main>
+        <!-- Login Form -->
+        <div class="form-container" id="loginForm" onsubmit="event.preventDefault(); alert('Login Successful!');">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+              <label for="email"></label>
+                    <input type="email" id="email"  placeholder="Email" required> 
+                </div>
+                <div class="form-group">
+                    <label for="password"></label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Log In</button>
+                <p> Don't have an account?</p>
+                <button type="button" class="btn" onclick="showRegisterForm()">Register now</button>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-container" id="registerForm" style="display: none;" onsubmit="event.preventDefault(); alert('Register Successful!');">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                     <label for="fullName"></label>
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                     <label for="registerEmail"></label>
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword"  placeholder="Password" required>
+                    <label for="registerPassword"></label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <label for="phone"></label>
+                </div>
+                
+                
+                <button type="submit" class="btn">Register</button>
+                <p> Already have an account?</p>
+                <button type="button" class="btn" onclick="showLoginForm()">Login now</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
