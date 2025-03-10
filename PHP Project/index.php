@@ -128,7 +128,18 @@ if (isset($_POST['login'])) {
             data: formData,
             success: function (response) {
                 console.log(response); // Debugging: Check the response in the browser console
-                
+          
+                if (response.includes("successful")) {
+                    window.location.href = "home.php"; // Redirect on successful login
+                } else {
+                    $("#status").html(response); // Display error message in #status div
+                }
+            },
+            error: function () {
+                $("#status").html("Error occurred. Please try again.");
+            }
+        });
+    });
     });
     </script>
 </body>
