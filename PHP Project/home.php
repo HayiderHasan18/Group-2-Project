@@ -36,3 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: home.php");
         exit();
     }
+
+    // Handle Profile Image Upload
+    if (isset($_POST['upload_file'])) {
+        $file = $_FILES['file'];
+        $target_dir = "uploads/";
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+        $target_file = $target_dir . basename($file["name"]);
+        if (move_uploaded_file($file["tmp_name"], $target_file)) {
+            $sql = "UPDATE users SET profile_image='$target_file' WHERE id=$user_id";
+            mysqli_query($connection, $sql);
+            header("Location: home.php");
+            exit();
+        }
+    }
