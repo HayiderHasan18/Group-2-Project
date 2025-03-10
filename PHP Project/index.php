@@ -128,6 +128,7 @@ if (isset($_POST['login'])) {
             data: formData,
             success: function (response) {
                 console.log(response); // Debugging: Check the response in the browser console
+                
     });
     </script>
 </body>
