@@ -73,3 +73,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         e.preventDefault();
         $("#status").html(""); // Clear previous messages
         var formData = $(this).serialize() + "&register=1";
+        $.ajax({
+            url: "index.php",
+            type: "POST",
+            data: formData,
+            success: function (response) {
+                $("#status").html(response); // Display new message
+                if (response.includes("successful")) {
+                    showSection("login"); // Switch to login form on success
+                }
+            },
+            error: function () {
+                $("#status").html("Error occurred. Please try again.");
+            }
+        });
+    });
