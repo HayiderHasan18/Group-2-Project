@@ -27,6 +27,10 @@ if (isset($_POST['login'])) {
         echo "Both fields are required!";
         exit;
     }
+    $stmt = $connection->prepare("SELECT id, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     <!DOCTYPE html>
 <html lang="en">
