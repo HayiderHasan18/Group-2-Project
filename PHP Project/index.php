@@ -18,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error: Registration failed.";
         }
     }
+//login
+  
+if (isset($_POST['login'])) {
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
     <!DOCTYPE html>
 <html lang="en">
