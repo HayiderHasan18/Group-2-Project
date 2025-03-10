@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Registration</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./Css/login.css">
 </head>
 <body>
     <!-- Login Form -->
@@ -110,29 +110,6 @@ if (isset($_POST['login'])) {
                 $("#status").html(response); // Display new message
                 if (response.includes("successful")) {
                     showSection("login"); // Switch to login form on success
-                }
-            },
-            error: function () {
-                $("#status").html("Error occurred. Please try again.");
-            }
-        });
-    });
-     // Login AJAX
-    $("#login-form").on("submit", function (e) {
-        e.preventDefault();
-        $("#status").html(""); // Clear previous messages
-        var formData = $(this).serialize() + "&login=1";
-         $.ajax({
-            url: "index.php",
-            type: "POST",
-            data: formData,
-            success: function (response) {
-                console.log(response); // Debugging: Check the response in the browser console
-          
-                if (response.includes("successful")) {
-                    window.location.href = "home.php"; // Redirect on successful login
-                } else {
-                    $("#status").html(response); // Display error message in #status div
                 }
             },
             error: function () {
