@@ -75,3 +75,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="?logout=true">Logout</a> <!-- This now works correctly -->
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome, <?php echo htmlspecialchars($user_name); ?></h1>
+        <div class="form-container">
+            <h2>Update Profile</h2>
+            <form method="POST">
+                <input type="text" name="name" placeholder="Name" value="<?php echo htmlspecialchars($user_name); ?>" required>
+                <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>" required>
+                <button type="submit" name="update_profile">Update Profile</button>
+            </form>
