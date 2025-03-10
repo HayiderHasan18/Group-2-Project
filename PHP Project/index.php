@@ -117,6 +117,11 @@ if (isset($_POST['login'])) {
             }
         });
     });
+     // Login AJAX
+    $("#login-form").on("submit", function (e) {
+        e.preventDefault();
+        $("#status").html(""); // Clear previous messages
+        var formData = $(this).serialize() + "&login=1";
     });
     </script>
 </body>
