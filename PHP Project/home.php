@@ -112,3 +112,26 @@ $tasks = mysqli_query($connection, $sql);
 
         <div class="form-container">
             <h2>To-Do List</h2>
+            <form method="POST">
+                <input type="text" name="task" placeholder="New Task" required>
+                <button type="submit" name="add_task">Add Task</button>
+            </form>
+            <ul class="task-list">
+                <?php while ($task = mysqli_fetch_assoc($tasks)) { ?>
+                    <li>
+                        <?php echo htmlspecialchars($task['task']); ?>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
+                            <?php if ($task['status'] == 'pending') { ?>
+                                <button type="submit" name="mark_done">Done</button>
+                            <?php } ?>
+                            <button type="submit" name="delete_task">Delete</button>
+                        </form>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </main>
+
+</body>
+</html>
