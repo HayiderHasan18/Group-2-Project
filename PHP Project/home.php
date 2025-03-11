@@ -102,3 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>" required>
                 <button type="submit" name="update_profile">Update Profile</button>
             </form>
+            <!-- Display Profile Image -->
+            <img id="profile-image" src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile Image">
+        </div>
+
+        <div class="form-container">
+            
