@@ -106,6 +106,11 @@ $tasks = mysqli_query($connection, $sql);
                 <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>" required>
                 <button type="submit" name="update_profile">Update Profile</button>
             </form>
+            <h3>Upload Profile Image</h3>
+            <form method="POST" enctype="multipart/form-data"> 
+                <input type="file" name="file" required>
+                <button type="submit" name="upload_file">Upload</button>
+            </form>
             <!-- Display Profile Image -->
             <img id="profile-image" src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile Image">
         </div>
