@@ -106,3 +106,9 @@ $tasks = mysqli_query($connection, $sql);
                 <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>" required>
                 <button type="submit" name="update_profile">Update Profile</button>
             </form>
+            <!-- Display Profile Image -->
+            <img id="profile-image" src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile Image">
+        </div>
+
+        <div class="form-container">
+            <h2>To-Do List</h2>
