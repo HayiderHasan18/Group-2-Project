@@ -75,6 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
+// Fetch tasks
+$sql = "SELECT * FROM tasks WHERE user_id=$user_id ORDER BY id DESC";
+$tasks = mysqli_query($connection, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
